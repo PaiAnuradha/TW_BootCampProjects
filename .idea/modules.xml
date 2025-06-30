@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AdvJavaProjects.iml" filepath="$PROJECT_DIR$/AdvJavaProjects.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShapeAssignment/ShapeAssignment.iml" filepath="$PROJECT_DIR$/ShapeAssignment/ShapeAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExceptionAssignment/ExceptionAssignment.iml" filepath="$PROJECT_DIR$/ExceptionAssignment/ExceptionAssignment.iml" />
     </modules>
   </component>
 </project>
