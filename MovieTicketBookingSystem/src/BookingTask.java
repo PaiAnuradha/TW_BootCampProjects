@@ -12,11 +12,11 @@ public class BookingTask implements  Runnable{
     @Override
     public void run() {
         try{
-            logger.info("Booking"+id+": Booking Received");
+            logger.info(Thread.currentThread().getName()+" Booking"+id+": Booking Received");
             Thread.sleep(2000);
-            logger.info("Booking"+id+": Payment Processed");
+            logger.info(Thread.currentThread().getName()+" Booking"+id+": Payment Processed");
             Thread.sleep(5000);
-            logger.info("Booking"+id+": Ticket Confirmed");
+            logger.info(Thread.currentThread().getName()+" Booking"+id+": Ticket Confirmed");
         }
         catch (Exception ex){
             logger.log(Level.SEVERE,"Booking "+id+": failed"+ ex.getMessage());

@@ -10,7 +10,7 @@ public class MovieBookingApp {
        final int threadPoolSize = 3;
        final int numOfBookings = 5;
 
-        try( ExecutorService executor = Executors.newFixedThreadPool(numOfBookings)){
+        try( ExecutorService executor = Executors.newFixedThreadPool(threadPoolSize)){
             for(int i = 1; i< numOfBookings; i++){
                executor.submit(new BookingTask(i));
            }
