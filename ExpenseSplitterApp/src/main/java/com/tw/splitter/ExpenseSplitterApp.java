@@ -14,12 +14,12 @@ public class ExpenseSplitterApp {
     private static final String TRANSACTION_FILE_PATH = "/transactions.txt";
 
 
-    public static ArrayList<String> readTransactionsFromFile() throws FileNotFoundException {
+    public static List<String> readTransactionsFromFile(String filePath) throws FileNotFoundException {
         try {
-            InputStream inputStreamReader = ExpenseSplitterApp.class.getResourceAsStream(TRANSACTION_FILE_PATH);
+            InputStream inputStreamReader = ExpenseSplitterApp.class.getResourceAsStream(filePath);
             if (inputStreamReader == null) {
-                logger.severe("No such file found: " + TRANSACTION_FILE_PATH);
-                throw new FileNotFoundException(TRANSACTION_FILE_PATH + " File not found!");
+                logger.severe("No such file found: " + filePath);
+                throw new FileNotFoundException(filePath + " File not found!");
             } else {
                 ArrayList<String> transactionStatements = new ArrayList<>();
                 Scanner scanner = new Scanner(inputStreamReader);
@@ -37,7 +37,7 @@ public class ExpenseSplitterApp {
 
     public static void main(String[] args) {
         try {
-            List<String> transactionStatements = readTransactionsFromFile();
+            List<String> transactionStatements = readTransactionsFromFile(TRANSACTION_FILE_PATH);
             ExpenseSettlementService transactionService = new TransactionProcessor();
             transactionService.setTransactionList(transactionStatements);
             transactionService.calculateOwedAmounts();
