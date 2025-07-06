@@ -8,15 +8,15 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class SplitterApp {
+public class ExpenseSplitterApp {
 
-    private static final Logger logger = Logger.getLogger(SplitterApp.class.getName());
+    private static final Logger logger = Logger.getLogger(ExpenseSplitterApp.class.getName());
     private static final String TRANSACTION_FILE_PATH = "/transactions.txt";
 
 
     public static ArrayList<String> readTransactionsFromFile() throws FileNotFoundException {
         try {
-            InputStream inputStreamReader = SplitterApp.class.getResourceAsStream(TRANSACTION_FILE_PATH);
+            InputStream inputStreamReader = ExpenseSplitterApp.class.getResourceAsStream(TRANSACTION_FILE_PATH);
             if (inputStreamReader == null) {
                 logger.severe("No such file found: " + TRANSACTION_FILE_PATH);
                 throw new FileNotFoundException(TRANSACTION_FILE_PATH + " File not found!");
