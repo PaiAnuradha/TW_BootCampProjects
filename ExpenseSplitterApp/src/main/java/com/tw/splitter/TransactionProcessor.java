@@ -69,7 +69,6 @@ public class TransactionProcessor  implements ExpenseSettlementService {
             //build reverse lookup
             String[] indexToName = new String[nameToIndex.size()];
             nameToIndex.forEach((name, index) -> indexToName[index] = name);
-            System.out.println("Final simplified transactions:");
             for (int i = 0; i < transactionMatrix.length; i++) {
                 for (int j = 0; j < transactionMatrix.length; j++) {
                     if (transactionMatrix[i][j] > 0) {
